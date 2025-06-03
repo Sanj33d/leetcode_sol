@@ -7,6 +7,8 @@ class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         cur1 = cur2 = head
         idx1 = idx2 = 0
+        # if num of nodes = odd or even
+        ## floor divide it then add 1
         while cur1 != None:
             idx1 += 1
             cur1 = cur1.next
