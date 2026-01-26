@@ -1,17 +1,20 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left = 0
-        right = len(nums) - 1
-        mid = (left + right) // 2
+        right = len(nums)-1
 
-        while left <= right:
-            if nums[mid] < target:
-                left = mid + 1
-            elif nums[mid] > target:
-                right = mid - 1
-            else:
+        def binsrch(nums, left, right, target):
+            mid = left + (right - left) // 2
+            if left > right: # base case 1
+                return -1
+
+            if nums[mid] == target: # base case 2
                 return mid
-            mid = (left + right) // 2
-        return -1
-
+            else: # recursive  case
+                if nums[mid] < target: # rc1
+                    return binsrch(nums, mid + 1, right, target)
+                else: # rc2
+                    return binsrch(nums, left, mid - 1, target)
+        ans = binsrch(nums, left, right, target)
+        return ans
         
