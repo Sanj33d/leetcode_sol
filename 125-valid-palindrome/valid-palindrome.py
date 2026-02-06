@@ -1,7 +1,6 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         
-        
         newstr = ''
         for i in range(len(s)):
             if 'A'<=s[i]<='Z':
