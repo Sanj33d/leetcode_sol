@@ -14,10 +14,9 @@ class Solution:
                 break
 
         if len(str2) > 0:
-            if str2[0] == "-":
+            if str2[0] == "-" or str2[0] == '+':
                 str2 = str2[1:]
-            elif str2[0] == "+":
-                str2 = str2[1:]
+
             if len(str2) == 0:
                 int_var = 0
             else:
@@ -25,7 +24,6 @@ class Solution:
                     int_var = 0 - int(str2)
                 else:
                     int_var = int(str2)
-
         else:
             int_var = 0
 
