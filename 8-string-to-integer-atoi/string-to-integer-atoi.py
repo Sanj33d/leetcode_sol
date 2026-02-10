@@ -16,10 +16,8 @@ class Solution:
         if len(str2) > 0:
             if str2[0] == "-":
                 str2 = str2[1:]
-                # int_var = 0 - int(str2)
             elif str2[0] == "+":
                 str2 = str2[1:]
-                # int_var = int(str2)
             if len(str2) == 0:
                 int_var = 0
             else:
