@@ -1,21 +1,22 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        dic = {}
-        ans = 0
-        for x in s:
-            if x not in dic:
-                dic[x] = 1
-            else:
-                dic[x] += 1
+        even_count = 0
+        odd_count = 0
+        counter = {}
 
-        for k in dic:
-            if dic[k] > 1:
-                if dic[k] % 2 == 0:
-                    ans += dic[k]
-                else:
-                    ans += dic[k] - 1
-        for k in dic:
-            if dic[k] % 2 == 1:
-                ans += 1
-                return ans
-        return ans
+        for i in range(len(s)):
+            if s[i] not in counter:
+                counter[s[i]] = 1
+            else:
+                counter[s[i]] += 1
+
+        for key in counter:
+            if counter[key] % 2 == 0:
+                if counter[key] >= 2:
+                    even_count += counter[key]
+            else:
+                if counter[key] > 1:
+                    even_count += counter[key] - 1
+                odd_count = 1
+        return odd_count + even_count
+                    
