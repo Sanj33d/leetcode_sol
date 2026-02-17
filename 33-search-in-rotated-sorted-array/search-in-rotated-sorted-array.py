@@ -6,13 +6,13 @@ class Solution:
             mid = left + (right - left) // 2
             if nums[mid] == target:
                 return mid
-            # if left to mid sorted
+            # if left to mid is sorted
             elif nums[mid] >= nums[left]:
-                if nums[left] <= target <= nums[mid]:
+                if nums[left] <= target < nums[mid]:
                     right = mid - 1
                 else:
                     left = mid + 1
-            # if mid to right sorted
+            # if mid to right is sorted
             else:
                 if nums[mid] < target <= nums[right]:
                     left = mid + 1
