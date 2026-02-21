@@ -1,7 +1,7 @@
 class LRUCache {
-    int capacity;
-    HashMap<Integer, Integer> cache;
-    ArrayList<Integer> stack;
+    private int capacity;
+    private HashMap<Integer, Integer> cache;
+    private ArrayList<Integer> stack;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
