@@ -2,13 +2,10 @@ class Trie:
 
     def __init__(self):
         self.arr = []
-        self.output = []
-        # self.output.append(None)
 
     def insert(self, word: str) -> None:
         if word not in self.arr:
             self.arr.append(word)
-            # self.output.append(None)
 
     def search(self, word: str) -> bool:
         if word in self.arr:
